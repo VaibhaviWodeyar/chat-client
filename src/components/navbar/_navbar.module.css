@@ -1,0 +1,49 @@
+#navbarSection {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  box-shadow: 1px 0px 4px 0px #cccccc5e;
+}
+
+#navbarSection > article {
+  background-color: #fff;
+  height: inherit;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbarSection .menuBlock ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+#navbarSection .menuBlock ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #049cff;
+  border-color: #049cff;
+  color: #fff;
+  margin: 4px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+#navbarSection .menuBlock ul li a:hover {
+  background-color: #3081c8;
+  transition: ease all 0.6s;
+}
+.logoBlock a {
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    color: #000;
+}
+.active {
+  background-color: #fff !important;
+  border-color: #049cff !important;
+  border: 1px solid #049cff !important;
+}

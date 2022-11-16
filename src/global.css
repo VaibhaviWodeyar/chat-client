@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #efefef;
+    
+}
+
+h1, h2, h3, h4, h5, h2 a, label {
+    color: rgb(40, 60, 73);
+}
