@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AllBatches } from "../../redux/Batch/BatchSlice";
-
+import {HiChat} from 'react-icons/hi'
 const BatchList = () => {
   let dispatch = useDispatch();
   let { batches } = useSelector((state) => state.batch);
@@ -34,7 +34,11 @@ const BatchList = () => {
                     <td>{ele.course}</td>
                     <td>{ele.trainer}</td>
                     <td>{ele.No_ofStudents}</td>
-                    <td><Link to={`${ele.batchCode}`}>Chat</Link></td>
+                    <td><Link to={`${ele.batchCode}`}>
+                      <span>
+                        <HiChat />
+                      </span>
+                      </Link></td>
                   </tr>
                 );
               })}

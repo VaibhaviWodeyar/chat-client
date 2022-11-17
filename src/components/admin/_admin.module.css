@@ -1,0 +1,77 @@
+#adminDashboardBlock article {
+  background: #efefef;
+  display: flex;
+  min-height: 92vh;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock {
+  flex-basis: 15%;
+  background-color: #fff;
+  border-top: 1px solid #efefef;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul {
+  display: flex;
+  flex-direction: column;
+}
+#adminDashboardBlock > article > aside.sidebarBlock ul li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul li a {
+  background: #eeeeee26;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  padding: 10px 5px;
+  color: rgb(40 60 73);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul li a span:first-child {
+  flex-basis: 10%;
+  position: relative;
+}
+#adminDashboardBlock > article > aside.sidebarBlock ul li span:last-child {
+  flex-basis: 90%;
+  margin: 0 14px;
+}
+#adminDashboardBlock
+  > article
+  > aside.sidebarBlock
+  ul
+  li
+  a:first-child
+  span
+  svg {
+  color: #3081c8;
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  left: 0px;
+  top: -4px;
+}
+
+#adminDashboardBlock > article > aside.mainadminBlock {
+  flex-basis: 85%;
+  background-color: #fff;
+}
+
+#adminDashboardBlock article ul li a:hover {
+  background: #eee !important;
+  transition: ease all 0.7s;
+}
+
+#adminDashboardBlock article table tr td {
+  position: relative;
+}
+
+#adminDashboardBlock article table tr tr td a {
+  color: green;
+  font-size: 27px;
+  position: absolute;
+  top: 0;
+}

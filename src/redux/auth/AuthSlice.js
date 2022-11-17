@@ -73,7 +73,6 @@ export const logOut = createAsyncThunk(
   }
 );
 
-
 //Slice starts here
 export let authSlice = createSlice({
   name: "auth",
@@ -86,7 +85,7 @@ export let authSlice = createSlice({
       state.message = "";
     },
   },
-  //register 
+  //register
   extraReducers: (builder) => {
     builder.addCase(register.pending, (state) => {
       state.isLoading = true;
@@ -138,7 +137,7 @@ export let authSlice = createSlice({
       state.user = null;
       state.isLogout = true;
     });
-   //Logout
+    //Logout
     builder.addCase(logOut.fulfilled, (state) => {
       state.user = null;
     });

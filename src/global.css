@@ -1,16 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: #efefef;
-    
+  font-family: "Lato", sans-serif;
+  background-color: #efefef;
 }
 
-h1, h2, h3, h4, h5, h2 a, label {
-    color: rgb(40, 60, 73);
+h1,
+h2,
+h3,
+h4,
+h5,
+h2 a,
+label {
+  color: rgb(40, 60, 73);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #efefef;
+  padding: 5px;
+}
+
+tr,
+td,
+th {
+  padding: 7px;
+  border: 1px solid #efefef;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+thead {
+  background: rgb(40 60 73);
+  color: #fff;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #efefef40;
+}
+tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tr td a {
+    color: green;
+    font-size: 27px;
+    position: absolute;
+    top: 0;
 }

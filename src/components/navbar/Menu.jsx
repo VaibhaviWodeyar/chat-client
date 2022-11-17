@@ -6,12 +6,12 @@ const Menu = () => {
     <nav className={Styles.menuBlock}>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a href="#"  activeClassName="active-link">Home</a>
         </li>
         <li>
           <NavLink
             to="/auth/login"
-            activeClassName="active"
+            activeClassName="active-link"
           >
             Login
           </NavLink>

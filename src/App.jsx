@@ -17,7 +17,7 @@ const App = () => {
     <Fragment>
       <Router>
         <Navbar />
-        {/* dynamic routes */}
+       
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/auth/login" element={<Login />} />
