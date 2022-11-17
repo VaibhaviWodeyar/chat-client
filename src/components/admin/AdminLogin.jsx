@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Styles from "./_admin-login.module.css";
-import { signIn, reset } from "../../redux/auth/AuthSlice";
+import { AdminWithLogin, reset } from "../../redux/auth/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -42,7 +42,7 @@ const AdminLogin = () => {
       }
       if (number && password) {
         let payload = { number, password };
-        dispatch(signIn(payload));
+        dispatch(AdminWithLogin(payload));
       }
     } catch (error) {
       console.log(error);

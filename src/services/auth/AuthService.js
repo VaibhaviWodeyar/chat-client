@@ -11,8 +11,8 @@ const register = async (userData, token) => {
 await AxioInstance.post("/auth/register", userData);
   };
 
-const login = async (userData) => {
-  const { data } = await AxioInstance.post("/users/login", userData);
+const adminLogin = async (userData) => {
+  const { data } = await AxioInstance.post("/auth/login", userData);
   if (data) {
     localStorage.setItem("user", JSON.stringify(data));
   }
@@ -44,9 +44,9 @@ const logout = async token => {
 
 const authService = {
   register,
-  login,
   logout,
-  stdlogin
+  stdlogin,
+  adminLogin
 };
 
 export default authService;

@@ -1,78 +1,138 @@
 #adminDashboardBlock article {
-    background: #efefef;
-    display: flex;
-    min-height: 92vh;
-  }
-  
-  #adminDashboardBlock > article > aside.sidebarBlock {
-    flex-basis: 15%;
-    background-color: #fff;
-    border-top: 1px solid #efefef;
-  }
-  
-  #adminDashboardBlock > article > aside.sidebarBlock ul {
-    display: flex;
-    flex-direction: column;
-  }
-  #adminDashboardBlock > article > aside.sidebarBlock ul li {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  #adminDashboardBlock > article > aside.sidebarBlock ul li a {
-    background: #eeeeee26;
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #efefef;
-    padding: 10px 5px;
-    color: rgb(40 60 73);
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  #adminDashboardBlock > article > aside.sidebarBlock ul li a span:first-child {
-    flex-basis: 10%;
-    position: relative;
-  }
-  #adminDashboardBlock > article > aside.sidebarBlock ul li span:last-child {
-    flex-basis: 90%;
-    margin: 0 14px;
-  }
-  #adminDashboardBlock
-    > article
-    > aside.sidebarBlock
-    ul
-    li
-    a:first-child
-    span
-    svg {
-    color: #3081c8;
-    font-weight: bold;
-    font-size: 25px;
-    position: absolute;
-    left: 0px;
-    top: -4px;
-  }
-  
-  #adminDashboardBlock > article > aside.mainadminBlock {
-    flex-basis: 85%;
-    background-color: #fff;
-  }
-  
-  #adminDashboardBlock article ul li a:hover {
-    background: #eee !important;
-    transition: ease all 0.7s;
-  }
-  
-  #adminDashboardBlock article table tr td {
-    position: relative;
-  }
-  
-  #adminDashboardBlock article table tr tr td a {
-    color: green;
-    font-size: 27px;
-    position: absolute;
-    top: 0;
-  }
-  
+  background: #efefef;
+  display: flex;
+  height: auto;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock {
+  flex-basis: 15%;
+  background-color: #fff;
+  border-top: 1px solid #efefef;
+  height: 92vh;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul {
+  display: flex;
+  flex-direction: column;
+}
+#adminDashboardBlock > article > aside.sidebarBlock ul li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul li a {
+  background: #eeeeee26;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  padding: 10px 5px;
+  color: rgb(40 60 73);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#adminDashboardBlock > article > aside.sidebarBlock ul li a span:first-child {
+  flex-basis: 10%;
+  position: relative;
+}
+#adminDashboardBlock > article > aside.sidebarBlock ul li span:last-child {
+  flex-basis: 90%;
+  margin: 0 14px;
+}
+#adminDashboardBlock
+  > article
+  > aside.sidebarBlock
+  ul
+  li
+  a:first-child
+  span
+  svg {
+  color: #3081c8;
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  left: 0px;
+  top: -4px;
+}
+
+#adminDashboardBlock > article > aside.mainadminBlock {
+  flex-basis: 85%;
+  background-color: #fff;
+  height: 100%;
+}
+
+#adminDashboardBlock article ul li a:hover {
+  background: #eee !important;
+  transition: ease all 0.7s;
+}
+
+#adminDashboardBlock article table tr td {
+  position: relative;
+}
+
+#adminDashboardBlock article table tr tr td a {
+  color: green;
+  font-size: 27px;
+  position: absolute;
+  top: 0;
+}
+
+#BatchGridLayout article {
+  display: flex;
+  background: #efefef;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#BatchGridLayout article .container {
+  flex-basis: 24.3%;
+  background: #fff;
+  padding: 10px;
+}
+
+#BatchGridLayout article .container h1 {
+  font-size: 20px;
+  padding: 0px 0 5px;
+  color: rgb(103, 58, 183);
+  font-weight: bold;
+  border-bottom: 2px solid rgb(103 58 183 / 8%);
+  margin: 5px 0 10px;
+  width: fit-content;
+  border-radius: 1px 5px 5px 2px;
+}
+
+.container p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.container p span {
+  display: flex;
+  gap: 5px;
+}
+.container  a {
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 12px;
+  color: rgb(103 58 183);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid rgb(103 58 183);
+  transition: ease all 0.7s;
+}
+
+.container  a:hover {
+  background: rgb(103 58 183);
+  color: #fff;
+}
+.container a span {
+  margin: 1px 5px 0 0px;
+  display: inline-block;
+}

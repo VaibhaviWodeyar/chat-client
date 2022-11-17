@@ -28,9 +28,9 @@ export const register = createAsyncThunk(
   }
 );
 //Login
-export const signIn = createAsyncThunk("auth/login", async (user, thunkAPI) => {
+export const AdminWithLogin = createAsyncThunk("auth/admin/login", async (user, thunkAPI) => {
   try {
-    return await authService.login(user);
+    return await authService.adminLogin(user);
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.error) ||
@@ -42,7 +42,7 @@ export const signIn = createAsyncThunk("auth/login", async (user, thunkAPI) => {
 
 //student login
 export const stdlogin = createAsyncThunk(
-  "users/login",
+  "users/student/login",
   async (user, thunkAPI) => {
     try {
       return await authService.stdlogin(user);
@@ -101,18 +101,18 @@ export let authSlice = createSlice({
       state.message = payload;
       state.user = null;
     });
-    //signin in case
-    builder.addCase(signIn.pending, (state) => {
+    //signin student in case
+    builder.addCase(AdminWithLogin.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(signIn.fulfilled, (state, { payload }) => {
+    builder.addCase(AdminWithLogin.fulfilled, (state, { payload }) => {
       console.log(payload);
       state.isLoading = false;
       state.isSuccess = true;
       state.user = payload;
       state.role = payload.role;
     });
-    builder.addCase(signIn.rejected, (state, { payload }) => {
+    builder.addCase(AdminWithLogin.rejected, (state, { payload }) => {
       state.isLoading = false;
       state.isError = true;
       state.message = payload;
