@@ -25,7 +25,7 @@ const Login = () => {
     }
     if (isSuccess && user) {
       toast.success("Successfully Logged in", { position: "top-right" });
-      navigate("/admin-dashboard");
+      navigate("/user-dashboard");
     }
     dispatch(reset());
   }, [isError, isSuccess, message, navigate, dispatch, user]);

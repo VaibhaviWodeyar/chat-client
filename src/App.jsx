@@ -8,6 +8,10 @@ import AdminLogin from "./components/admin/AdminLogin";
 import BatchList from "./components/admin/BatchList";
 import Login from "./components/auth/Login";
 import Navbar from "./components/navbar/Navbar";
+import UserBatchData from "./components/Users/UserBatchData";
+import UserGroupData from "./components/Users/UserGroupData";
+import UsersDashboard from "./components/Users/UsersDashboard";
+import AdminRoute from "./helpers/AdminRoutes";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Home from "./pages/Home";
 
@@ -20,39 +24,44 @@ const App = () => {
         <Navbar />
 
         <Routes>
-        <Route path="/auth/admin/login" element={<AdminLogin  />} />
+          <Route path="/auth/admin/login" element={<AdminLogin />} />
           <Route path="/auth/login" element={<Login />} />
 
           <Route
             path="/admin-dashboard"
             element={
-              <PrivateRoute>
+              <AdminRoute>
                 <AdminDashboard />
-              </PrivateRoute>
+              </AdminRoute>
             }
           >
             <Route
               index
               element={
                 user?.user?.role === "admin" ? (
-                  <PrivateRoute>
+                  <AdminRoute>
                     <BatchList />
-                  </PrivateRoute>
+                  </AdminRoute>
                 ) : (
-                  <PrivateRoute>
+                  <AdminRoute>
                     <Home />
-                  </PrivateRoute>
+                  </AdminRoute>
                 )
               }
             />
             <Route
               path="admin/addroles"
               element={
-                <PrivateRoute>
+                <AdminRoute>
                   <AddRoles />
-                </PrivateRoute>
+                </AdminRoute>
               }
             />
+          </Route>
+          {/* user Dashboard */}
+          <Route path="/user-dashboard" element={<UsersDashboard />}>
+            <Route index element={<UserBatchData />} />
+            <Route  path="usergrouplist" element={<UserGroupData />} />
           </Route>
         </Routes>
       </Router>
