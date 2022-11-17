@@ -6,7 +6,7 @@ const AdminSidebar = () => {
   return (
     <ul>
       <li>
-        <Link to="/admin-dashboard">
+        <Link to="/user">
           <span>
             {/* <FaRegUser /> */}
             <FcHome />
