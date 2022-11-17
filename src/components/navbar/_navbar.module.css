@@ -23,13 +23,13 @@
 
 #navbarSection .menuBlock ul li a {
   text-decoration: none;
-    padding: 4px 13px;
-    margin: 4px;
-    font-weight: bold;
-    border-radius: 3px;
-    font-size: 14px;
-    border: 1px solid rgb(103, 58, 183);
-    color: rgb(103, 58, 183);
+  padding: 4px 13px;
+  margin: 4px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid rgb(103, 58, 183);
+  color: rgb(103, 58, 183);
 }
 
 #navbarSection .menuBlock ul li a:hover {
@@ -43,8 +43,24 @@
   letter-spacing: 1.2px;
   color: #000;
 }
-.active {
-  background-color: #fff !important;
-  border-color: #049cff !important;
-  border: 1px solid #049cff !important;
+
+
+#navbarSection .menuBlock ul li button {
+  padding: 5px 13px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 14px;
+  border: 1px solid rgb(103, 58, 183);
+  color: rgb(103, 58, 183);
+  background: rgb(103, 58, 183);
+  color: #fff;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+}
+
+#navbarSection .menuBlock ul li button:hover {
+  border: 1px solid rgb(103, 58, 183);
+  background: transparent;
+  color:rgb(103, 58, 183);;
 }

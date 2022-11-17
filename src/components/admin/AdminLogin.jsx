@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import Styles from "./_auth.module.css";
+import Styles from "./_admin-login.module.css";
 import { signIn, reset } from "../../redux/auth/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const AdminLogin = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let { isLoading, isSuccess, isError, message, user } = useSelector(
@@ -89,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

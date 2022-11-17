@@ -55,3 +55,10 @@ tr td a {
     position: absolute;
     top: 0;
 }
+
+
+.active {
+  border: 1px solid rgb(103, 58, 183) !important;
+  color: #fff !important;
+  background: rgb(103, 58, 183) !important;
+}

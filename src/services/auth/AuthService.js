@@ -12,7 +12,7 @@ await AxioInstance.post("/auth/register", userData);
   };
 
 const login = async (userData) => {
-  const { data } = await AxioInstance.post("/auth/login", userData);
+  const { data } = await AxioInstance.post("/users/login", userData);
   if (data) {
     localStorage.setItem("user", JSON.stringify(data));
   }

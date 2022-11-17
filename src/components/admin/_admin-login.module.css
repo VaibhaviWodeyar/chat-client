@@ -1,0 +1,64 @@
+#authBlock article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+  }
+  
+  #authBlock > article > div {
+    width: 25%;
+  }
+  
+  #authBlock form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+  }
+  #authBlock h1 {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  #authBlock form label {
+    display: block;
+    padding: 5px 0;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  #authBlock form input {
+    display: block;
+    padding: 6px;
+    font-weight: bold;
+    border: 1px solid #eee;
+    outline: none;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 3px;
+  }
+  
+  #authBlock form button {
+    width: 100%;
+    margin: 15px 0;
+    border: none;
+    padding:8px 30px;
+    background: rgb(40 60 73);
+    color: #fff;
+    display: inline-block;
+    border-radius: 4px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid rgb(40 60 73);
+    cursor: pointer;
+  }
+  
+  #authBlock form button:hover {
+    border: 1px solid rgb(40 60 73);
+    background-color: transparent;
+    color: rgb(40 60 73);
+  }
+  
