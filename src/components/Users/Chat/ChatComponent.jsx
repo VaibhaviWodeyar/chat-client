@@ -26,7 +26,7 @@ const ChatComponent = React.memo((props) => {
   const scrollRef = useRef();
   let { user } = useSelector((state) => state?.auth);
 
-
+console.log(user)
 
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const ChatComponent = React.memo((props) => {
 
   useEffect(() => {
     async function demo() {
-      let payload = { senderId: auth, receiverId: stdid };
+      let payload = { senderId: user._id, receiverId: stdid };
       let data = await AxioInstance.post("/chat/newConversation", payload);
     }
     demo();
@@ -74,19 +74,19 @@ const ChatComponent = React.memo((props) => {
   useEffect(() => {
     let batchStudents = students.map((x) => x._id);
     let users = { auth, ...batchStudents };
-    socket.current.emit("addUser", auth);
+    socket.current.emit("addUser", user._id);
     socket.current.on("getUsers", (users) => {
       // console.log(users);
       setOnlineUsers(
         students.filter((f) => users.some((u) => u.userId === f._id))
       );
     });
-  }, [auth]);
+  }, [user._id]);
   // get all conversation from the user
   useEffect(() => {
     const getconversations = async () => {
       try {
-        const res = await AxioInstance.get("/chat/" + stdid);
+        const res = await AxioInstance.get(`/chat/find/${user._id}/${stdid}`);
         console.log(res.data);
         
         setConversations(res.data);
@@ -96,13 +96,11 @@ const ChatComponent = React.memo((props) => {
     };
     getconversations();
   }, [stdid]);
-  
-  // console.log(currentChat)
-  // console.log(oneBatchList)
+
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await AxioInstance.get("/chat/msg/" + currentChat?._id);
+        const res = await AxioInstance.get("/chat/msg/" + conversations.conversation);
         // console.log(res.data);
         setMessages(res.data);
       } catch (error) {
@@ -110,20 +108,21 @@ const ChatComponent = React.memo((props) => {
       }
     };
     getMessages();
-  }, [currentChat]);
+  }, [currentChat===null? null:currentChat]);
+  console.log(currentChat)
 
   const handelSubmit = async (e) => {
     e.preventDefault();
     const message = {
-      sender: auth,
+      sender: user._id,
       text: newMessag,
-      conversationId: currentChat._id,
+      conversationId: conversations.conversation,
     };
     // console.log(message)
     const receiverId = currentChat._id !== auth;
 
     socket.current.emit("sendMessage", {
-      senderId: auth,
+      senderId: user._id,
       receiverId: currentChat._id,
       text: newMessag,
     });

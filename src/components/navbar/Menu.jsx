@@ -11,6 +11,7 @@ const Menu = () => {
   const IsLogout = () => {
     dispatch(logOut());
     window.location.assign("/auth/admin/login");
+    
   };
 
   const IsStudentLogout = () =>{

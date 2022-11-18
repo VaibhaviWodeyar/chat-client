@@ -27,7 +27,7 @@ const Login = () => {
       toast.success("Successfully Logged in", { position: "top-right" });
       user.role === "student"
         ? navigate("/student-dashboard")
-        : navigate("user-dashboard");
+        : navigate("/user-dashboard");
     }
     dispatch(reset());
   }, [isError, isSuccess, message, navigate, dispatch, user]);

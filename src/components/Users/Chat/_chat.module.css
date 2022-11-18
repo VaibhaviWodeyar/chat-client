@@ -65,42 +65,60 @@
   font-size: 13px;
 }
 
- .chatBoxBottom {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    right: 0;
-    display: flex;
-    background: #fff;
-    padding: 10px;
-} 
+.chatBoxBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  display: flex;
+  background: #fff;
+  padding: 10px;
+}
 
 .chatBox {
-   position: relative;
-
+  position: relative;
 }
 
 .chatBoxBottom textarea {
-    background: #fff;
-    border: 1px solid #efefef;
-    padding: 10px;
-    width: 90%;
+  background: #fff;
+  border: 1px solid #efefef;
+  padding: 10px;
+  width: 90%;
 }
 .chatBoxBottom button {
-    width: auto;
-    border: none;
-    padding: 10px 30px;
-    background: rgb(103 58 183);
-    color: #fff;
-    display: inline-block;
-    border-radius: 0px 5px 6px 0px;
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 15px;
-    border: 1px solid rgb(103 58 183);
-    cursor: pointer;
-    outline: none;
-  }
-  .message.own{
-    align-items: flex-end;
+  width: auto;
+  border: none;
+  padding: 10px 30px;
+  background: rgb(103 58 183);
+  color: #fff;
+  display: inline-block;
+  border-radius: 0px 5px 6px 0px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid rgb(103 58 183);
+  cursor: pointer;
+  outline: none;
+}
+.message.own {
+  align-items: flex-end;
+}
+
+.sendermsg {
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 6px;
+  margin: 3px;
+  width: 50%;
+  float: right;
+  border-bottom: 1px solid rgb(103 58 183 / 33%);
+}
+.recivermsg {
+  background-color: rgb(103 58 183 / 8%);
+  padding: 7px;
+  border-radius: 6px;
+  margin: 3px;
+  width: 50%;
+  float: left;
+  border-bottom: 1px solid rgb(103 58 183 / 19%);
 }

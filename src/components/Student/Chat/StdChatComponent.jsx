@@ -26,9 +26,6 @@ const ChatComponent = React.memo((props) => {
   const scrollRef = useRef();
   let { user } = useSelector((state) => state?.auth);
 
-
-
-
   useEffect(() => {
     async function fetchlist() {
       AxioInstance.get(`users/batches/${batchCode}`, {
@@ -88,7 +85,7 @@ const ChatComponent = React.memo((props) => {
       try {
         const res = await AxioInstance.get("/chat/" + stdid);
         console.log(res.data);
-        
+
         setConversations(res.data);
       } catch (error) {
         console.log(error);
@@ -96,13 +93,15 @@ const ChatComponent = React.memo((props) => {
     };
     getconversations();
   }, [stdid]);
-  
+
   // console.log(currentChat)
   // console.log(oneBatchList)
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await AxioInstance.get("/chat/msg/" + currentChat?._id);
+        const res = await AxioInstance.get(
+          "/chat/msg/" + conversations.conversation
+        );
         // console.log(res.data);
         setMessages(res.data);
       } catch (error) {
@@ -112,6 +111,7 @@ const ChatComponent = React.memo((props) => {
     getMessages();
   }, [currentChat]);
 
+  console.log(currentChat);
   const handelSubmit = async (e) => {
     e.preventDefault();
     const message = {
@@ -141,7 +141,7 @@ const ChatComponent = React.memo((props) => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  console.log(messages);
+  // console.log(messages);
   return (
     <section id={Styles.chatBoxSection}>
       <article>
@@ -173,9 +173,8 @@ const ChatComponent = React.memo((props) => {
                           <FiSearch />
                         </span>
                         {students.map((c) => (
-                        
                           <div
-                          className={Styles.listUser}
+                            className={Styles.listUser}
                             onClick={() => {
                               setCurrentChat(c);
                               setStuid(c._id);
@@ -187,6 +186,7 @@ const ChatComponent = React.memo((props) => {
                       </div>
                     </div>
                   </aside>
+
                   <aside className={Styles.chatBox}>
                     <div className={Styles.chatBoxWrapper}>
                       {currentChat ? (
@@ -194,7 +194,10 @@ const ChatComponent = React.memo((props) => {
                           <div className={Styles.chatBoxTop}>
                             {/* <div ref={scrollRef}> */}
                             {messages?.map((m) => (
-                              <Message message={m} own={m.sender === auth} />
+                              <Message
+                                message={m}
+                                own={m.sender === user._id}
+                              />
                             ))}
                             {/* </div> */}
                           </div>

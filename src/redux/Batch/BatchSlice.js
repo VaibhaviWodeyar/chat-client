@@ -11,6 +11,7 @@ let initialState = {
   message: "",
   role: "",
   isLogout: false,
+  allroles:[]
 };
 
 export const AllBatches = createAsyncThunk(
@@ -37,6 +38,23 @@ export const createBatch = createAsyncThunk(
     console.log(token);
     try {
       return await batchService.CreateBatch(batchData, token);
+    } catch (error) {
+      const message =
+        (error.response && error.response.data && error.response.data.error) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const allroles = createAsyncThunk(
+  "admin/allroles",
+  async (_, thunkAPI) => {
+    let token = thunkAPI.getState().auth.user.TOKEN;
+
+    try {
+      return await batchService.allroles(token);
     } catch (error) {
       const message =
         (error.response && error.response.data && error.response.data.error) ||
@@ -89,7 +107,20 @@ export let batchSlice = createSlice({
       state.message = payload;
       state.batch = null;
     });
-  },
+ 
+//get all roles
+builder.addCase(allroles.fulfilled, (state, { payload }) => {
+  state.isLoading = false;
+  state.isSuccess = true;
+  state.allroles = payload;
+});
+builder.addCase(allroles.rejected, (state, { payload }) => {
+  state.isLoading = false;
+  state.isError = true;
+  state.message = payload;
+  state.allroles = null;
+});
+},
 });
 
 export let { reset } = batchSlice.actions;

@@ -5,7 +5,7 @@ import Styles from './_chat.module.css'
 const Message = ({message, own }) => {
   console.log(message)
   return (
-    <div className={own ? "message own" : "message"}>
+    <div className={own ? `${Styles.sendermsg}` : `${Styles.recivermsg}`}>
        <div className={Styles.messageTop}>
          <p className={Styles.messageText}>
            {message.text}

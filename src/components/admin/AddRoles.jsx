@@ -15,7 +15,7 @@ const AddRoles = () => {
   let [number, setNumber] = useState("");
   let [password, setPassword] = useState("");
   let [role, setRole] = useState("");
-  let [idNum, setIdNum] = useState("");
+  // let [idNum, setIdNum] = useState("");
 
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const AddRoles = () => {
   let handleSubmit = (e) => {
     e.preventDefault();
     try {
-      let payload = { email, password, username, number, idNum, role };
+      let payload = { email, password, username, number, role };
       dispatch(register(payload));
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ const AddRoles = () => {
                 <option value="feetracker">Traker</option>
               </select>
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label htmlFor="idNum">idNum</label>
               <input
                 className="form-control"
@@ -100,7 +100,7 @@ const AddRoles = () => {
                 placeholder="Enter idNum"
                 onChange={(e) => setIdNum(e.target.value)}
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <button>Add User</button>
             </div>

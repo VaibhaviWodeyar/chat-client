@@ -23,6 +23,15 @@ const AdminSidebar = () => {
           <span>Add Roles</span>
         </Link>
       </li>
+      <li>
+        <Link to="/admin-dashboard/admin/allroles">
+          <span>
+            {/* <FaRegUser /> */}
+            <FcBusinessContact />
+          </span>
+          <span>View Roles</span>
+        </Link>
+      </li>
     </ul>
   );
 };

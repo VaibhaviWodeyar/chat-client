@@ -21,6 +21,7 @@ import UsersDashboard from "./components/Users/UsersDashboard";
 import AdminRoute from "./helpers/AdminRoutes";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Home from "./pages/Home";
+import AllRoles from "./components/admin/AllRoles";
 
 const App = () => {
   let user = useSelector((state) => state.auth);
@@ -61,6 +62,14 @@ const App = () => {
               element={
                 <AdminRoute>
                   <AddRoles />
+                </AdminRoute>
+              }
+            />
+             <Route
+              path="admin/allroles"
+              element={
+                <AdminRoute>
+                  <AllRoles />
                 </AdminRoute>
               }
             />
