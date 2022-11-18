@@ -4,7 +4,7 @@ import { VscOutput } from "react-icons/vsc";
 import {FcGraduationCap} from 'react-icons/fc';
 import {BsChatDotsFill} from 'react-icons/bs'
 import Styles from "./_user.module.css";
-const StudentBatchListDetails = ({ subject, course, batchCode }) => {
+const StudentBatchListDetails = ({ subject, course, batchCode  , trainer }) => {
   return (
     <div className={Styles.container}>
       <h1>{batchCode}</h1>
@@ -16,6 +16,15 @@ const StudentBatchListDetails = ({ subject, course, batchCode }) => {
           <strong>Subject : </strong>
         </span>
         <span> {subject}</span>
+      </p>
+      <p>
+        <span>
+          <strong>
+            <VscOutput />
+          </strong>
+          <strong>Trainer : </strong>
+        </span>
+        <span> {trainer}</span>
       </p>
       <p>
         <span>

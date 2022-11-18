@@ -45,14 +45,14 @@
     margin: 15px 0;
     border: none;
     padding:8px 30px;
-    background: rgb(40 60 73);
+    background: rgb(103, 58, 183);
     color: #fff;
     display: inline-block;
     border-radius: 4px;
     text-transform: capitalize;
     font-weight: bold;
     font-size: 15px;
-    border: 1px solid rgb(40 60 73);
+    border: 1px solid rgb(103, 58, 183);
     cursor: pointer;
   }
   

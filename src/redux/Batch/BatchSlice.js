@@ -48,13 +48,13 @@ export const createBatch = createAsyncThunk(
   }
 );
 
-export const allroles = createAsyncThunk(
+export const Allroles = createAsyncThunk(
   "admin/allroles",
   async (_, thunkAPI) => {
     let token = thunkAPI.getState().auth.user.TOKEN;
 
     try {
-      return await batchService.allroles(token);
+      return await batchService.Allroles(token);
     } catch (error) {
       const message =
         (error.response && error.response.data && error.response.data.error) ||
@@ -109,12 +109,12 @@ export let batchSlice = createSlice({
     });
  
 //get all roles
-builder.addCase(allroles.fulfilled, (state, { payload }) => {
+builder.addCase(Allroles.fulfilled, (state, { payload }) => {
   state.isLoading = false;
   state.isSuccess = true;
   state.allroles = payload;
 });
-builder.addCase(allroles.rejected, (state, { payload }) => {
+builder.addCase(Allroles.rejected, (state, { payload }) => {
   state.isLoading = false;
   state.isError = true;
   state.message = payload;

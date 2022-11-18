@@ -35,21 +35,22 @@ const CreateBatch = async (batchData , token) => {
      return data;
   };
 
-  const allroles = async (allrole , token) => {
-    console.log(allroles)
+  const Allroles = async (token ,allrole) => {
+    console.log(allrole)
+    console.log(token)
      let config = { 
       headers:{
         Authorization: `Bearer ${token}`,
       }
      };
-    const { data } = await AxioInstance.get("admin/getusers", allrole , config);
+    const { data } = await AxioInstance.get("admin/getusers", config ,  allrole);
      return data;
   };
 
   const batchService = {
     AllBatches,
     CreateBatch,
-    allroles
+    Allroles
    }
 
   export default batchService;
