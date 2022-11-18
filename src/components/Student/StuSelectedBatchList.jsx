@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import ChatComponent from './Chat/ChatComponent';
-const SelectedBatchList = () => {
+import ChatComponent from './Chat/StdChatComponent';
+const StuSelectBatchList = () => {
 let {user} = useSelector(state => state?.auth);
     return (
     <div >
@@ -9,4 +9,4 @@ let {user} = useSelector(state => state?.auth);
   )
 }
 
-export default SelectedBatchList
+export default StuSelectBatchList

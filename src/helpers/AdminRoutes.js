@@ -8,7 +8,7 @@ const AdminRoute = ({children}) => {
         {children}
         </>
     }else {
-        return <Navigate to="/auth/login" />
+        return <Navigate to="/auth/admin/login" />
     }
 }
 

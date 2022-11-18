@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Styles from "./_auth.module.css";
 import { stdlogin, reset } from "../../redux/auth/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
 
   let [number, setNumber] = useState("");
   let [password, setPassword] = useState("");
-  let numbererrorRef = useRef()
+  let numbererrorRef = useRef();
   let passworderrorRef = useRef();
 
   useEffect(() => {
@@ -25,7 +25,9 @@ const Login = () => {
     }
     if (isSuccess && user) {
       toast.success("Successfully Logged in", { position: "top-right" });
-      navigate("/user-dashboard");
+      user.role === "student"
+        ? navigate("/student-dashboard")
+        : navigate("user-dashboard");
     }
     dispatch(reset());
   }, [isError, isSuccess, message, navigate, dispatch, user]);
@@ -43,7 +45,7 @@ const Login = () => {
       if (number && password) {
         let payload = { number, password };
         dispatch(stdlogin(payload));
-      }
+       }
     } catch (error) {
       console.log(error);
     }

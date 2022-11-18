@@ -42,11 +42,26 @@ const logout = async token => {
   return data;
 };
 
+const StudentLogout = async token => {
+  let config = AxioInstance.interceptors.request.use(res => {
+    res.headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    return res;
+  });
+  const { data } = await AxioInstance.post("/users/logoutuser", config);
+  if (data) {
+    localStorage.removeItem("user");
+  }
+  return data;
+};
+
 const authService = {
   register,
   logout,
   stdlogin,
-  adminLogin
+  adminLogin,
+  StudentLogout
 };
 
 export default authService;

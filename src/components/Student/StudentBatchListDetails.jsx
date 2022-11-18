@@ -4,7 +4,7 @@ import { VscOutput } from "react-icons/vsc";
 import {FcGraduationCap} from 'react-icons/fc';
 import {BsChatDotsFill} from 'react-icons/bs'
 import Styles from "./_user.module.css";
-const UserBatchListDetails = ({ subject, course, batchCode }) => {
+const StudentBatchListDetails = ({ subject, course, batchCode }) => {
   return (
     <div className={Styles.container}>
       <h1>{batchCode}</h1>
@@ -33,4 +33,4 @@ const UserBatchListDetails = ({ subject, course, batchCode }) => {
   );
 };
 
-export default UserBatchListDetails;
+export default StudentBatchListDetails;

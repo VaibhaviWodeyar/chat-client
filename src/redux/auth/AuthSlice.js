@@ -60,9 +60,25 @@ export const logOut = createAsyncThunk(
   "auth/logoutuser",
   async (_, thunkAPI) => {
     try {
-      console.log(thunkAPI);
       let token = thunkAPI.getState().auth.user.TOKEN;
       return await authService.logout(token);
+    } catch (error) {
+      const message =
+        (error.response && error.response.data && error.response.data.error) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+//Logout
+export const StudentlogOut = createAsyncThunk(
+  "users/logoutuser",
+  async (_, thunkAPI) => {
+    try {
+      let token = thunkAPI.getState().auth.user.TOKEN;
+      return await authService.StudentLogout(token);
     } catch (error) {
       const message =
         (error.response && error.response.data && error.response.data.error) ||
@@ -106,7 +122,6 @@ export let authSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(AdminWithLogin.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.isLoading = false;
       state.isSuccess = true;
       state.user = payload;
@@ -139,6 +154,10 @@ export let authSlice = createSlice({
     });
     //Logout
     builder.addCase(logOut.fulfilled, (state) => {
+      state.user = null;
+    });
+    //Logout
+    builder.addCase(StudentlogOut.fulfilled, (state) => {
       state.user = null;
     });
   },
