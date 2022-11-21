@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Allroles } from "../../redux/Batch/BatchSlice";
+import {FaPenSquare} from "react-icons/fa"
 const AllRoles = () => {
   let dispatch = useDispatch();
   let { allroles } = useSelector((state) => state.batch);
@@ -9,16 +10,19 @@ const AllRoles = () => {
     dispatch(Allroles());
   }, []);
   console.log(allroles);
+  let FetchAllGroups = () => {
   return (
     <Fragment>
       <table border="2px">
         <thead>
           <tr>
-            <th>Trainer</th>
-            <th>Branch</th>
-            <th>Subject</th>
-            <th>Course</th>
-            <th>Total Student</th>
+            <th>Username</th>
+            <th>email</th>
+            <th>Number</th>
+            <th>Role</th>
+            <th>BatchCode</th>
+            <th>GroupCode</th>
+            <th>Update</th>
           </tr>
         </thead>
         <tbody>
@@ -26,11 +30,13 @@ const AllRoles = () => {
             {allroles?.results.map((ele,ind) => {
               return (
                 <tr key={ele.ind}>
-                  <td>{ele.branch}</td>
-                  <td>{ele.subject}</td>
-                  <td>{ele.course}</td>
-                  <td>{ele.trainer}</td>
-                  <td>{ele.No_ofStudents}</td>
+                  <td>{ele.username}</td>
+                  <td>{ele.email}</td>
+                  <td>{ele.number}</td>
+                  <td>{ele.role}</td>
+                  <td>{ele.batchCode.length}</td>
+                  <td>{ele.groupCode.length}</td>
+                  <td><Link to={`${ele._id}`} ><span><FaPenSquare></FaPenSquare></span></Link></td>
                 </tr>
               );
             })}
@@ -40,5 +46,6 @@ const AllRoles = () => {
     </Fragment>
   );
 };
-
+return <>{allroles.results === undefined ? "no data" : <FetchAllGroups />}</>;
+}
 export default AllRoles;

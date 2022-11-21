@@ -22,6 +22,7 @@ import AdminRoute from "./helpers/AdminRoutes";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Home from "./pages/Home";
 import AllRoles from "./components/admin/AllRoles";
+import UpdateRoles from "./components/admin/UpdateRoles";
 
 const App = () => {
   let user = useSelector((state) => state.auth);
@@ -73,6 +74,7 @@ const App = () => {
                 </AdminRoute>
               }
             />
+            <Route path="admin/allroles/:id" element={<UpdateRoles />} />
           </Route>
           {/* user Dashboard */}
 
